@@ -16,19 +16,23 @@ ${SEARCH_TERM} =    Ferrari 458
 
 
 *** Test Cases ***
-Logged out user should be able to view a product
+Logged out user should be able to search a product
     [Tags]  Test1
+    amazonApp.Search for Products   ${SEARCH_TERM}
+
+Logged out user should be able to view a product
+    [Tags]  Test2
     amazonApp.Search for Products   ${SEARCH_TERM}
     amazonApp.Select Product from Search Results
 
 Logged out user should be able to add product to cart
-    [Tags]  Test2
+    [Tags]  Test3
     amazonApp.Search for Products   ${SEARCH_TERM}
     amazonApp.Select Product from Search Results
     amazonApp.Add Product to Cart
 
 User must sign in to check out
-    [Tags]  Test3
+    [Tags]  Test4
     amazonApp.Search for Products   ${SEARCH_TERM}
     amazonApp.Select Product from Search Results
     amazonApp.Add Product to Cart
